@@ -1,20 +1,22 @@
-    const HtmlWebPackPlugin = require("html-webpack-plugin");
-    const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+    const HtmlWebPackPlugin = require('html-webpack-plugin')
+    const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+    const Dotenv = require('dotenv-webpack')
     module.exports = {
       module: {
         rules: [
           {
             test: /\.js$/,
             exclude: /node_modules/,
-            use: {
-              loader: "babel-loader"
-            }
+            use: [
+              'babel-loader',
+              'eslint-loader'
+            ]
           },
           {
             test: /\.html$/,
             use: [
               {
-                loader: "html-loader",
+                loader: 'html-loader',
                 options: { minimize: true }
               }
             ]
@@ -22,25 +24,26 @@
           {
             test: /\.scss$/,
               use: [
-                  process.env.NODE_ENV !== "production" ? "style-loader" : MiniCssExtractPlugin.loader,
-                  "css-loader", // translates CSS into CommonJS
-                  "sass-loader" // compiles Sass to CSS, using Node Sass by default
+                  process.env.NODE_ENV !== 'production' ? 'style-loader' : MiniCssExtractPlugin.loader,
+                  'css-loader', // translates CSS into CommonJS
+                  'sass-loader' // compiles Sass to CSS, using Node Sass by default
               ]
           },
           {
             test: /\.css$/,
-            use: [MiniCssExtractPlugin.loader, "css-loader"]
+            use: [MiniCssExtractPlugin.loader, 'css-loader']
           }
         ]
       },
       plugins: [
         new HtmlWebPackPlugin({
-          template: "./src/index.html",
-          filename: "./index.html"
+          template: './src/index.html',
+          filename: './index.html'
         }),
         new MiniCssExtractPlugin({
-          filename: "[name].css",
-          chunkFilename: "[id].css"
-        })
+          filename: '[name].css',
+          chunkFilename: '[id].css'
+        }),
+        new Dotenv()
       ]
-    };
+    }

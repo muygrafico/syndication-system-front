@@ -1,10 +1,29 @@
-import React from 'react'
+// import React from 'react'
 
-export default () => {
-    console.log(process.env.ENV_KEY)
+// export default () => {
+//     console.log(process.env.ENV_KEY)
+//     return (
+//         <div>
+//             <p>Hello World</p>
+//         </div>
+//     )
+// }
+
+import React from 'react'
+import PropTypes from 'prop-types'
+import { ConnectedRouter } from 'connected-react-router'
+import routes from './routes'
+
+const App = ({ history }) => {
     return (
-        <div>
-            <p>Hello World</p>
-        </div>
+        <ConnectedRouter history={history}>
+            { routes }
+        </ConnectedRouter>
     )
 }
+
+App.propTypes = {
+  history: PropTypes.object
+}
+
+export default App

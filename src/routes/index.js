@@ -5,11 +5,6 @@ import About from '../components/views/About'
 import Error404 from '../components/views/Error404'
 import NavBar from '../components/ui/NavBar'
 
-// import Hello from '../components/Hello'
-// import Counter from '../components/Counter'
-// import NoMatch from '../components/NoMatch'
-// import NavBar from '../components/NavBar'
-
 const routes = (
     <div>
         <NavBar />

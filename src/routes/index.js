@@ -13,7 +13,7 @@ const routes = (
         <NavBar />
         <Switch>
             <Route exact path='/' component={Home} />
-            <Route path='/hello' component={About} />
+            <Route path='/about' component={About} />
             {/* <Route path="/hello" component={Hello} />
             <Route path="/counter" component={Counter} />
             <Route component={NoMatch} /> */}

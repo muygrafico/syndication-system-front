@@ -1,0 +1,13 @@
+@import '../../variables';
+
+header { 
+  background: $darker-color;
+  box-shadow: 0 5px 10px 0 rgba(0,0,0, .25);
+  color: $header-text-color;
+  height: $header-height;
+  z-index: 1;
+
+  a {
+    color: $header-text-color;
+  }
+}

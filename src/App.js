@@ -1,13 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { ConnectedRouter } from 'connected-react-router'
-import routes from './routes'
+import Layout from './components/Layout'
 
 const App = ({ history }) => {
     console.log(process.env.ENV_KEY)
     return (
         <ConnectedRouter history={history}>
-            { routes }
+            <div className='full-height-container'>
+                <Layout />
+            </div>
         </ConnectedRouter>
     )
 }

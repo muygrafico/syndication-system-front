@@ -1,7 +1,29 @@
-body {
-  background-color: black;
-}
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
+@import 'utils/normalizer';
+@import 'utils/general_styling';
+@import 'variables';
 
-p {
-  color: white;
+@import 'components/layout';
+@import 'components/ui/header';
+@import 'components/ui/footer';
+
+main {
+  background-color: #FBFBFC;
+  height: 100%;
+  position: relative;
+  
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  &::before {
+    content: '';
+    width: 100%;
+    height: 200px;
+    background-color: #01D5CF;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+  }
 }

@@ -2,19 +2,15 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Header from './ui/Header'
 import Footer from './ui/Footer'
-import NavBar from './ui/NavBar'
 import routes from '../routes'
-// require('../styles/scss/main.scss')
 import '../styles/scss/main.scss'
 
 const Layout = (props) => (
     <div className='layout'>
-        <Header>
-            <NavBar />
-        </Header>
+        <Header />
         <main>
-            {props.children}
             {routes}
+            {props.children}
         </main>
         <Footer>
             <p>&copy; LendingFront {(new Date()).getFullYear()}</p>

@@ -1,10 +1,10 @@
     import React from 'react'
 
-    const About = () => {
+    const Home = () => {
         return (
             <div>
-                <p>About</p>
+                <p>Application</p>
             </div>
         )
     }
-    export default About
+    export default Home

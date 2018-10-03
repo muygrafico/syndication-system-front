@@ -8,7 +8,7 @@ import '../styles/scss/main.scss'
 const Layout = (props) => (
     <div className='layout'>
         <Header />
-        <main>
+        <main className='layout__main'>
             {routes}
             {props.children}
         </main>

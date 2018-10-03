@@ -1,6 +1,8 @@
 import React from 'react'
 import ProductList from '../ui/ProductList'
 import ProductItem from '../ui/ProductItem'
+import ApplicationBox from '../ui/ApplicationBox'
+import ProductListConainer from '../containers/ProductListContainer'
 
 const ProductItems = [
     {
@@ -59,8 +61,8 @@ const Application = () => {
     return (
         <div className='application'>
             <h2>Advances for syndication</h2>
-            <div className='application__box'>
-                <div className='product-list'>
+            <ApplicationBox>
+                <ProductListConainer>
                     <h4 className='product-list__header-title'>Select a product to syndicate</h4>
                     <ProductList>
                         {ProductItems.map(i => {
@@ -75,8 +77,8 @@ const Application = () => {
                         })
                         }
                     </ProductList>
-                </div>
-            </div>
+                </ProductListConainer>
+            </ApplicationBox>
         </div>
     )
 }

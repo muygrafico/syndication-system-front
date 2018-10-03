@@ -1,7 +1,9 @@
 .product-list {
+  box-sizing: content-box; /* So the width will be 100% + 17px */
   height: 100%;
   margin: 0;
   padding: 0;
+  width: 100%;
 }
 
 .product-list__header-title {

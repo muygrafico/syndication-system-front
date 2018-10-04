@@ -1,0 +1,44 @@
+@import '../variables';
+@import '../utils/mixins';
+
+.layout {
+  background-color: #FBFBFC;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  position: relative;
+  width: 100%;
+  
+  &::before {
+    content: '';
+    width: 100%;
+    height: 210px;
+    background-color: #01ADB6;
+    position: absolute;
+    top: 0;
+    z-index: 0;
+  }
+}
+
+.layout__main {
+  height: calc(100% - 90px);
+  margin: 0 auto 0 auto;
+  max-width: $max-container-width;
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+
+  @include md {
+    padding: 0 2em;
+  }
+
+  @include sm {
+    padding: 0 1em;
+  }
+    
+  > * {
+    position: relative;
+    z-index: 1;
+  }
+}

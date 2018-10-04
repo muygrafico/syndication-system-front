@@ -1,0 +1,39 @@
+@import '../../variables';
+
+header { 
+  background: rgb(52, 52, 52);
+  box-shadow: 0 5px 10px 0 rgba(0,0,0, .25);
+  color: $header-text-color;
+  height: $header-height;
+  max-height: $header-height;
+  z-index: 1;
+  align-items: center;
+  
+  nav {
+    margin-left: 40px;
+  }
+
+  a {
+    color: $header-text-color;
+  }
+
+  figure,
+  img {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    height: 43px;
+    margin-top: 1px;
+  }
+}
+
+.header__centered-content {
+  
+  height: $header-height; 
+  margin: 0 auto;
+  max-height: $header-height;
+  max-width: $max-container-width;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}

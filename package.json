@@ -40,8 +40,12 @@
     "webpack-dev-server": "^3.1.8"
   },
   "dependencies": {
+    "connected-react-router": "^4.5.0",
     "dotenv-webpack": "^1.5.7",
+    "react-custom-scrollbars": "^4.2.1",
+    "react-hot-loader": "^4.3.11",
     "react-redux": "^5.0.7",
+    "react-router-dom": "^4.3.1",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0"
   }

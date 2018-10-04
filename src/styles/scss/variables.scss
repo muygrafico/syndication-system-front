@@ -1,0 +1,35 @@
+$base-font-size: 16px;
+$base-font-family: 'Open Sans', Arial, sans-serif;
+
+// Colors
+$white-color: #ffffff;
+$dark-color: #402f2b;
+$darker-color: #2F2F2F;
+$light-color: #e6d5c3;
+$medium-color: #977978;
+$medium-2-color: #929292;
+$alert-color: #cb492a;
+$light-black-color: #706e72;
+$black-color: #414042;
+
+// Header
+$header-height: 60px;
+$header-color: $darker-color;
+$header-text-color: $medium-2-color;
+
+// Product List
+$product-list-box-shadow: inset -15px 0px 22px -10px rgba(0,0,0, .25);
+
+// Footer
+$footer-height: 50px;
+
+// Spacing
+
+$max-container-width: 1200px;
+
+// Breakpoints
+// $breakpoint-screen-sm-min: 576px;
+$breakpoint-screen-sm-max: 767px;
+$breakpoint-screen-md-min: 768px;
+$breakpoint-screen-lg-min: 992px;
+$breakpoint-screen-xl-min: 1200px;

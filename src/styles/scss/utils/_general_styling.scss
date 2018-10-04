@@ -1,0 +1,12 @@
+@import '../variables';
+
+body {
+  font-size: $base-font-size;
+}
+
+body,
+html,
+#app,
+.full-height-container, {
+  height: 100%;
+}

@@ -1,12 +1,21 @@
-    import React from 'react'
-    import ReactDOM from 'react-dom'
-    const App = () => {
-        console.log(process.env.ENV_KEY)
-        return (
-            <div>
-                <p>Hello World</p>
+import React from 'react'
+import PropTypes from 'prop-types'
+import { ConnectedRouter } from 'connected-react-router'
+import Layout from './components/Layout'
+
+const App = ({ history }) => {
+    console.log(process.env.ENV_KEY)
+    return (
+        <ConnectedRouter history={history}>
+            <div className='full-height-container'>
+                <Layout />
             </div>
-        )
-    }
-    export default App
-    ReactDOM.render(<App />, document.getElementById('app'))
+        </ConnectedRouter>
+    )
+}
+
+App.propTypes = {
+  history: PropTypes.object
+}
+
+export default App

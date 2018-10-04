@@ -1,0 +1,23 @@
+@import '../../variables';
+
+.product-list {
+  box-sizing: content-box;
+  // height: 100%;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  box-shadow: $product-list-box-shadow;
+  background-color: #fafafa;
+}
+
+.product-list__header-title {
+  margin: 0;
+  line-height: 3em;
+  background-color: rgb( 245, 245, 245);
+  color: rgb(170, 170, 170);
+  font-weight: 300;
+  letter-spacing: .5px;
+  padding-left: 1.5em;
+  font-size: .7em;
+  box-shadow: $product-list-box-shadow;
+}

@@ -1,0 +1,13 @@
+.application {
+  font-family: $base-font-family;
+  position: relative;
+  height: calc(100% - 80px);
+
+  h2 {
+    color: white;
+    font-size: 2em;
+    font-weight: 300;
+    letter-spacing: -0.4px;
+    margin-bottom: .5em;
+  }
+}

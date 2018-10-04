@@ -3,6 +3,7 @@ import ProductList from '../ui/ProductList'
 import ProductItem from '../ui/ProductItem'
 import ApplicationBox from '../ui/ApplicationBox'
 import ProductListConainer from '../containers/ProductListContainer'
+import SellAllIcon from '../icons/SellAllIcon'
 
 const ProductItems = [
     {
@@ -78,8 +79,16 @@ const Application = () => {
                         }
                     </ProductList>
                     <div className='product-list__bottom-controls'>
-                        <button>Close</button>
-                        <button>Sell All</button>
+                        <button className='button'>
+                            <span>Close</span>
+                        </button>
+                        <button className='button'>
+                            <span className='product-list__bottom-controls-icon'>
+                                <SellAllIcon />
+                                <SellAllIcon inverse />
+                            </span>
+                            <span>Sell all</span>
+                        </button>
                     </div>
                 </ProductListConainer>
             </ApplicationBox>

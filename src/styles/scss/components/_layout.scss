@@ -1,3 +1,6 @@
+@import '../variables';
+@import '../utils/mixins';
+
 .layout {
   background-color: #FBFBFC;
   display: flex;
@@ -19,13 +22,21 @@
 }
 
 .layout__main {
-  // background-color: #FBFBFC;
   height: calc(100% - 90px);
   margin: 0 auto 0 auto;
   max-width: $max-container-width;
   position: relative;
   width: 100%;
-  
+  box-sizing: border-box;
+
+  @include md {
+    padding: 0 2em;
+  }
+
+  @include sm {
+    padding: 0 1em;
+  }
+    
   > * {
     position: relative;
     z-index: 1;

@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400, 600');
 @import 'utils/normalizer';
 @import 'utils/general_styling';
+@import 'utils/mixins';
 @import 'variables';
 
 @import 'components/layout';
@@ -11,6 +12,7 @@
 @import 'components/ui/application-box';
 @import 'components/ui/product-list';
 @import 'components/ui/product-item';
+@import 'components/ui/product-list__bottom-controls';
 
 @import 'components/containers/product-list-container';
 

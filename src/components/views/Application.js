@@ -77,6 +77,10 @@ const Application = () => {
                         })
                         }
                     </ProductList>
+                    <div className='product-list__bottom-controls'>
+                        <button>Close</button>
+                        <button>Sell All</button>
+                    </div>
                 </ProductListConainer>
             </ApplicationBox>
         </div>

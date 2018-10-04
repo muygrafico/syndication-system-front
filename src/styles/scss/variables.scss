@@ -23,4 +23,13 @@ $product-list-box-shadow: inset -15px 0px 22px -10px rgba(0,0,0, .25);
 // Footer
 $footer-height: 50px;
 
+// Spacing
+
 $max-container-width: 1200px;
+
+// Breakpoints
+// $breakpoint-screen-sm-min: 576px;
+$breakpoint-screen-sm-max: 767px;
+$breakpoint-screen-md-min: 768px;
+$breakpoint-screen-lg-min: 992px;
+$breakpoint-screen-xl-min: 1200px;

@@ -9,7 +9,6 @@
   font-family: $base-font-family;
   position: relative;
   padding-top: 1em;
-  // padding-bottom: 1em;
 
   &::after {
     content: '';
@@ -20,7 +19,22 @@
     border-bottom: 1px solid rgb(236, 236, 236);
     height: calc(100% - 1em);
     box-sizing: border-box;
-    // background-color: rgba(green, .1);
+  }
+
+  &:last-child {
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.product-item:hover,
+.product-item--active {
+  background-color: #0099A3;
+  cursor: pointer;
+  .product-item__title,
+  span {
+    color: $white-color;
   }
 }
 

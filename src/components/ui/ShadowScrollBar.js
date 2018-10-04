@@ -28,8 +28,7 @@ export default class ColoredScrollbars extends Component {
         // const { top } = this.state
         const thumbStyle = {
             backgroundColor: `rgba(0,0,0, .05)`,
-            width: '5px',
-            marginLeft: '5px'
+            width: '15px'
         }
         return (
             <div

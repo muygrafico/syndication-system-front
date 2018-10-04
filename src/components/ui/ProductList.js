@@ -5,13 +5,12 @@ import ShadowScrollbar from './ShadowScrollbar'
 
 const ProductList = (props) => (
     <ShadowScrollbar
-      style={{ height: '100%' }}
+      style={{ height: 'calc(100% - 32px)' }}
       className='product-list-container'>
         <ul className='product-list'>
             {props.children}
         </ul>
-    </ShadowScrollbar
-    >
+    </ShadowScrollbar>
 )
 
 ProductList.propTypes = {

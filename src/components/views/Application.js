@@ -2,19 +2,20 @@ import React from 'react'
 import ProductList from '../ui/ProductList'
 import ProductItem from '../ui/ProductItem'
 import ApplicationBox from '../ui/ApplicationBox'
+import ProductCrud from '../ui/ProductCrud'
 import ProductListConainer from '../containers/ProductListContainer'
 import SellAllIcon from '../icons/SellAllIcon'
 
 const ProductItems = [
     {
          id: '35352323521',
-        date: '07/07/2016',
-        amount: '2.700.800'
+        date: '07/07/2020',
+        amount: '2.700.900'
     },
      {
          id: '35352323522',
         date: '07/07/2016',
-        amount: '2.700.800'
+        amount: '2.700.0 00'
     },
      {
          id: '35352323523',
@@ -40,28 +41,13 @@ const ProductItems = [
          id: '35352323527',
         date: '07/07/2016',
         amount: '2.700.800'
-    },
-     {
-         id: '35352323528',
-        date: '07/07/2016',
-        amount: '2.700.800'
-    },
-     {
-         id: '35352323529',
-        date: '07/07/2016',
-        amount: '2.700.800'
-    },
-     {
-         id: '35352323510',
-        date: '07/07/2016',
-        amount: '2.700.800'
     }
 ]
 
 const Application = () => {
     return (
         <div className='application'>
-            <h2>Advances for syndication</h2>
+            <h2 className='application__title'>Advances for syndication</h2>
             <ApplicationBox>
                 <ProductListConainer>
                     <h4 className='product-list__header-title'>Select a product to syndicate</h4>
@@ -91,6 +77,7 @@ const Application = () => {
                         </button>
                     </div>
                 </ProductListConainer>
+                <ProductCrud />
             </ApplicationBox>
         </div>
     )

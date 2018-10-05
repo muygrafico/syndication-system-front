@@ -2,12 +2,14 @@
   font-family: $base-font-family;
   position: relative;
   height: calc(100% - 80px);
+}
 
-  h2 {
-    color: white;
-    font-size: 2em;
-    font-weight: 300;
-    letter-spacing: -0.4px;
-    margin-bottom: .5em;
-  }
+.application__title {
+  color: $white-color;
+  font-size: 1.7em;
+  font-family: $base-font-family;
+  font-weight: 300 !important;
+  letter-spacing: -0.4px;
+  margin-bottom: .5em;
+  letter-spacing: 1px;
 }

@@ -33,15 +33,12 @@ const render = () => {
 
 render()
 
-// Hot reloading
+// webpack Hot Module Replacement API
 if (module.hot) {
-  // Reload components
   module.hot.accept('./App', () => {
-    render()
-  })
-
-  // Reload reducers
-  module.hot.accept('./reducers', () => {
-    store.replaceReducer(connectRouter(history)(rootReducer))
+    // if you are using harmony modules ({modules:false})
+    render(App)
+    // in all other cases - re-require App manually
+    render(require('./App'))
   })
 }

@@ -1,0 +1,48 @@
+.product-crud {
+  font-family: $base-font-family;
+  width: 100%;
+  box-sizing: border-box;
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.product-crud__header {
+  height: 30px;
+  background-color: #32CFC7;
+  width: 100%;
+}
+
+.product-crud__id {
+  margin: 0;
+  padding: .7em 0 .7em 2em;
+  border-bottom: 2px solid rgba($white-color, .2);
+  display: inline-block;
+  color: $white-color;
+  font-weight: 400;
+  font-size: .875em;
+  line-height: 1em;
+  letter-spacing: 1px;
+}
+
+.product-crud__table {
+  width: 100%;
+  border-collapse: collapse;
+  padding-left: 10px;
+  thead tr {
+    padding: 0 2em;
+  }
+
+  thead th {
+    background-color: #32CFC7;
+    height: 50px;
+    font-size: .8em;
+    font-weight: 400;
+    font-weight: 400;
+    color: rgba($white-color, .85);
+    letter-spacing: 1px;
+    text-align: left;
+  }
+}

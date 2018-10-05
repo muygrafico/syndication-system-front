@@ -3,6 +3,7 @@
 .product-list {
   box-sizing: content-box;
   // height: 100%;
+  min-height: 100%;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -16,6 +17,7 @@
   background-color: rgb( 245, 245, 245);
   color: rgb(170, 170, 170);
   font-weight: 300;
+  font-family: $base-font-family;
   letter-spacing: .5px;
   padding-left: 1.5em;
   font-size: .7em;

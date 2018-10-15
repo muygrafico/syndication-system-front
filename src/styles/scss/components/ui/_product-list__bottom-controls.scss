@@ -24,7 +24,8 @@
 }
 
 .button {
-  border-radius: 1.5em;
+    background-color: $white-color;
+    border-radius: 1.5em;
     border: 2px solid $main-color;
     color: $main-color;
     cursor: pointer;

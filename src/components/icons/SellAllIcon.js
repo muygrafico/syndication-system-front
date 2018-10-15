@@ -16,7 +16,7 @@ const SellAllIcon = (props) => (
 )
 
 SellAllIcon.propTypes = {
-  inverse: PropTypes.boolean
+  inverse: PropTypes.bool
 }
 
 export default SellAllIcon

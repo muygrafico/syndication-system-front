@@ -1,7 +1,13 @@
+$table-header-size: 52px;
+
 .product-crud {
   font-family: $base-font-family;
   width: 100%;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: hidden;
 
   p {
     margin: 0;
@@ -9,7 +15,6 @@
   }
 }
 .product-crud__purchase-list {
-  // background-color: red;
   padding-left: 1em;
   position: relative;
    z-index: 1;
@@ -19,7 +24,7 @@
     z-index: 0;
     position: absolute;
     width: 100%;
-    height: 50px;
+    height: $table-header-size;
     background-color: #32CFC7;
     left: 0;
     top: 0;
@@ -34,7 +39,7 @@
 
 .product-crud__id {
   margin: 0;
-  padding: .7em 0 .7em 1.2em;
+  padding: .7em 0 .65em 1.2em;
   border-bottom: 2px solid rgba($white-color, .2);
   display: inline-block;
   color: $white-color;
@@ -58,7 +63,7 @@
     // background-color: #32CFC7;
     position: relative;
     z-index: 1;
-    height: 50px;
+    height: $table-header-size;
     font-size: .8em;
     font-weight: 400;
     font-weight: 400;
@@ -66,4 +71,10 @@
     letter-spacing: 1px;
     text-align: left;
   }
+}
+
+.product-crud__footer {
+  background-color: #26A3AB;
+  color: $white-color;
+  height: 70px;
 }

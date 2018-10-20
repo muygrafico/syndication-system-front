@@ -77,4 +77,6 @@ $table-header-size: 52px;
   background-color: #26A3AB;
   color: $white-color;
   height: 70px;
+  box-sizing: border-box;
+  // padding: 1em 4em;
 }

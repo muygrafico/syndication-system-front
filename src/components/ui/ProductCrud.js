@@ -1,4 +1,5 @@
 import React from 'react'
+import RemainingAmount from './RemainingAmount'
 
 const productCRUD = {
     id: 235252523,
@@ -65,7 +66,7 @@ const ProductCrud = (props) => (
             </div>
         </div>
         <div className='product-crud__footer'>
-            <p>Remainig amount $850.000 of $8.300.800</p>
+            <RemainingAmount percentage={50} />
         </div>
     </div>
 )

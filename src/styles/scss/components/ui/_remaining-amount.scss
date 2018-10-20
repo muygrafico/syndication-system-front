@@ -1,0 +1,49 @@
+@import '../../variables';
+
+.remaining-amount {
+  padding: .65em 3em .1em 3em;
+}
+
+.remaining-amount__title {
+  font-size: 1.15em;
+  font-family: $base-font-family;
+  font-weight: lighter;
+  letter-spacing: .5px;
+  color: rgba($white-color, .9);
+}
+
+$remaining-amount-percentage-bar-height: 6px;
+
+.remaining-amount__percentage-bar-container {
+  margin: .25em 0 .25em 0;
+  width: 100%;
+  background-color:#86D1D4;
+  height: $remaining-amount-percentage-bar-height;
+  position: relative;
+  box-sizing: border-box;
+  border-radius: $remaining-amount-percentage-bar-height;
+  overflow: hidden;
+}
+
+.remaining-amount__percentage-bar {
+  height: $remaining-amount-percentage-bar-height;
+  border-radius: $remaining-amount-percentage-bar-height;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  background-color: $white-color;
+  position: absolute;
+  content: '';
+  transition: width 2s;
+}
+
+.remaining-amount__percentage-tags {
+  display: flex;
+  justify-content: space-between;
+}
+
+.remaining-amount__tag {
+  font-size: .65em;
+  letter-spacing: 1px;
+  font-weight: 300;
+  margin: 0;
+}

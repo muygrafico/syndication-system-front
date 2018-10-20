@@ -1,3 +1,5 @@
+@import '../../variables';
+
 .application {
   font-family: $base-font-family;
   position: relative;
@@ -12,4 +14,39 @@
   letter-spacing: -0.4px;
   margin-bottom: .5em;
   letter-spacing: 1px;
+}
+
+.application__add-button {
+  border-radius: 50%;
+  border: 0;
+  box-shadow: 1px 3px 2px 0 rgba(0,0,0, .35);
+  height: 60px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  right: 2em;
+  top: 1em;
+  width: 60px;
+  z-index: 10;
+  background-color: #FF9804;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &:focus {
+    outline: 0;
+  }
+
+  &:hover {
+    background-color: lighten(#FF9804, 5%);
+  }
+  
+  span {
+    font-size: 2em;
+    font-weight: 300;
+    color: $white-color;
+    line-height: 50px;
+    margin-top: -2px;
+  }
 }

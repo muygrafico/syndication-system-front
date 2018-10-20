@@ -58,6 +58,7 @@ const Application = () => {
     return (
         <div className='application'>
             <h2 className='application__title'>Advances for syndication</h2>
+            <button className='application__add-button'><span>+</span></button>
             <ApplicationBox>
                 <ProductListConainer>
                     <h4 className='product-list__header-title'>Select a product to syndicate</h4>

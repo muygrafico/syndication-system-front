@@ -1,10 +1,16 @@
+// variables
+@import 'variables';
+
+// utils
 @import 'utils/normalizer';
 @import 'utils/general_styling';
 @import 'utils/mixins';
 @import 'variables';
 
+// layouts
 @import 'components/layout';
 
+// ui
 @import 'components/ui/nav';
 @import 'components/ui/header';
 @import 'components/ui/footer';
@@ -15,6 +21,8 @@
 @import 'components/ui/product-crud';
 @import 'components/ui/remaining-amount';
 
+// containers
 @import 'components/containers/product-list-container';
 
+// views
 @import 'components/views/application';

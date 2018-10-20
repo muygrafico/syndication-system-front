@@ -1,4 +1,4 @@
-$table-header-size: 52px;
+$table-header-size: 53px;
 
 .product-crud {
   font-family: $base-font-family;
@@ -60,13 +60,11 @@ $table-header-size: 52px;
   }
 
   thead th {
-    // background-color: #32CFC7;
     position: relative;
     z-index: 1;
     height: $table-header-size;
-    font-size: .8em;
-    font-weight: 400;
-    font-weight: 400;
+    font-size: 1em;
+    font-weight: 300;
     color: rgba($white-color, .85);
     letter-spacing: 1px;
     text-align: left;
@@ -78,5 +76,4 @@ $table-header-size: 52px;
   color: $white-color;
   height: 70px;
   box-sizing: border-box;
-  // padding: 1em 4em;
 }

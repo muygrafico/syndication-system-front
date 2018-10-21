@@ -2,11 +2,28 @@ import React from 'react'
 import RemainingAmount from './RemainingAmount'
 import CircularProgressbar from 'react-circular-progressbar'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
 import 'react-circular-progressbar/dist/styles.css'
 
+const mapStateToProps = (store) => {
+  return {
+    selectedProductID: store.DataReducer.selectedProductID,
+    products: store.DataReducer.products
+  }
+}
+
+const filterSelected = (id, collection) =>
+    collection.filter(x => x.id === id)
+
 const ProductCrud = (props) => {
-    const productCRUD = props.data
+    const productCRUD = props && props.products && props.selectedProductID
+    ? filterSelected(props.selectedProductID, props.products)[0] : []
+
+    const productCRUD2 = props.data
+    console.log(productCRUD2)
+    // console.log(productCRUD)
+
     return (
         <div className='product-crud'>
             <div>
@@ -29,6 +46,7 @@ const ProductCrud = (props) => {
                         </thead>
                         <tbody>
                             {productCRUD &&
+                            productCRUD.purchases &&
                             productCRUD.purchases.length > 0 &&
                             productCRUD.purchases.map((p, i) => {
                                     return (
@@ -94,7 +112,9 @@ const ProductCrud = (props) => {
 }
 
 ProductCrud.propTypes = {
-  data: PropTypes.any
+  data: PropTypes.any,
+  selectedProductID: PropTypes.any,
+  products: PropTypes.any
 }
 
-export default ProductCrud
+export default connect(mapStateToProps)(ProductCrud)

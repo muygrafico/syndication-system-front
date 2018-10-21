@@ -8,51 +8,68 @@ import SellAllIcon from '../icons/SellAllIcon'
 
 const ProductItems = [
     {
-         id: '35352323521',
-        date: '07/07/2020',
-        amount: '2.700.900'
+        id: 35352323521,
+        date: '15/02/2018',
+        amount: 300000,
+        purchases: []
     },
      {
-         id: '35352323522',
-        date: '07/07/2016',
-        amount: '2.700.000'
-    },
-     {
-         id: '35352323523',
-        date: '07/07/2016',
-        amount: '2.700.800'
-    },
-     {
-         id: '35352323524',
-        date: '07/07/2016',
-        amount: '2.700.800'
-    },
-     {
-         id: '35352323525',
-        date: '07/07/2016',
-        amount: '2.700.800'
-    },
-     {
-         id: '35352323526',
-        date: '07/07/2016',
-        amount: '2.700.800'
-    },
-     {
-         id: '35352323527',
-        date: '07/07/2016',
-        amount: '2.700.800'
-    },
-      {
-         id: '35352323529',
-        date: '07/07/2016',
-        amount: '2.700.800'
-    },
-     {
-         id: '35352323510',
-        date: '07/07/2016',
-        amount: '2.700.800'
+        id: 7854232322,
+        date: '20/08/2017',
+        amount: 150000,
+        purchases: [
+            {
+                inverstorsName: 'Y Combinator',
+                sold: 830800,
+                purchasedPercentage: 10.7,
+                amountLeft: 230800,
+                remainingPercentage: 89.3
+            },
+            {
+                inverstorsName: 'SassStr',
+                sold: 830800,
+                purchasedPercentage: 20,
+                amountLeft: 230800,
+                remainingPercentage: 89.3
+            },
+            {
+                inverstorsName: 'IndieGo',
+                sold: 830800,
+                purchasedPercentage: 20,
+                amountLeft: 230800,
+                remainingPercentage: 89.3
+            }
+        ]
     }
 ]
+
+const productCRUD = {
+    id: 235252523,
+    totalLoan: 300000,
+    purchases: [
+        {
+            inverstorsName: 'Y Combinator',
+            sold: 830800,
+            purchasedPercentage: 10.7,
+            amountLeft: 230800,
+            remainingPercentage: 89.3
+        },
+        {
+            inverstorsName: 'SassStr',
+            sold: 830800,
+            purchasedPercentage: 20,
+            amountLeft: 230800,
+            remainingPercentage: 89.3
+        },
+         {
+            inverstorsName: 'IndieGo',
+            sold: 830800,
+            purchasedPercentage: 20,
+            amountLeft: 230800,
+            remainingPercentage: 89.3
+        }
+    ]
+}
 
 const Application = () => {
     return (
@@ -88,7 +105,7 @@ const Application = () => {
                         </button>
                     </div>
                 </ProductListConainer>
-                <ProductCrud />
+                <ProductCrud data={productCRUD} />
             </ApplicationBox>
         </div>
     )

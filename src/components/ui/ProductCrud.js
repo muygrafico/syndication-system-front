@@ -1,5 +1,7 @@
 import React from 'react'
 import RemainingAmount from './RemainingAmount'
+import CircularProgressbar from 'react-circular-progressbar'
+import 'react-circular-progressbar/dist/styles.css'
 
 const productCRUD = {
     id: 235252523,
@@ -7,17 +9,24 @@ const productCRUD = {
     purchases: [
         {
             inverstorsName: 'Y Combinator',
-            sold: '07/07/2020',
-            purchasedPercentage: '2.700.900',
-            amountLeft: '2.700.900',
-            remainingPercentage: '2.700.900'
+            sold: 830800,
+            purchasedPercentage: 10.7,
+            amountLeft: 230800,
+            remainingPercentage: 89.3
         },
         {
-            inverstorsName: 'Y Combinator',
-            sold: '07/07/2020',
-            purchasedPercentage: '2.700.900',
-            amountLeft: '2.700.900',
-            remainingPercentage: '2.700.900'
+            inverstorsName: 'SassStr',
+            sold: 830800,
+            purchasedPercentage: 20,
+            amountLeft: 230800,
+            remainingPercentage: 89.3
+        },
+         {
+            inverstorsName: 'IndieGo',
+            sold: 830800,
+            purchasedPercentage: 20,
+            amountLeft: 230800,
+            remainingPercentage: 89.3
         }
     ]
 }
@@ -49,10 +58,34 @@ const ProductCrud = (props) => (
                                 return (
                                     <tr key={i}>
                                         <td>{p.inverstorsName}</td>
-                                        <td>{p.sold}</td>
-                                        <td>{p.purchasedPercentage}</td>
-                                        <td>{p.amountLeft}</td>
-                                        <td>{p.remainingPercentage}</td>
+                                        <td>${p.sold.toLocaleString()}</td>
+                                        <td>
+                                            <div className='circular-progressbar-container'>
+                                                <CircularProgressbar
+                                                  percentage={p.purchasedPercentage}
+                                                  text={`${p.purchasedPercentage}`}
+                                                  strokeWidth={4}
+                                                  styles={{
+                                                      path: { stroke: `rgba(60, 207, 199, 1)` },
+                                                      text: { fill: 'rgba(0,0,0, .6)', fontSize: '22px' }
+                                                  }}
+                                                />
+                                            </div>
+                                        </td>
+                                        <td>${p.amountLeft.toLocaleString()}</td>
+                                        <td>
+                                            <div className='circular-progressbar-container'>
+                                                <CircularProgressbar
+                                                  percentage={p.remainingPercentage}
+                                                  text={`${p.remainingPercentage}`}
+                                                  strokeWidth={4}
+                                                  styles={{
+                                                      path: { stroke: `#FF9804` },
+                                                      text: { fill: 'rgba(0,0,0, .6)', fontSize: '22px' }
+                                                  }}
+                                                />
+                                            </div>
+                                        </td>
                                         <td>
                                             <button>e</button>
                                             <button>x</button>

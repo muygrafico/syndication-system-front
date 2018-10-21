@@ -8,14 +8,9 @@ $table-header-size: 53px;
   flex-direction: column;
   justify-content: space-between;
   overflow-y: hidden;
-
-  p {
-    margin: 0;
-    padding: 0;
-  }
 }
 .product-crud__purchase-list {
-  padding-left: 1em;
+  // padding-left: 1em;
   position: relative;
    z-index: 1;
 
@@ -54,11 +49,7 @@ $table-header-size: 53px;
 .product-crud__table {
   width: 100%;
   border-collapse: collapse;
-  padding-left: 10px;
-  thead tr {
-    padding: 0 2em;
-  }
-
+  
   thead th {
     position: relative;
     z-index: 1;
@@ -68,6 +59,42 @@ $table-header-size: 53px;
     color: rgba($white-color, .85);
     letter-spacing: 1px;
     text-align: left;
+  }
+
+  thead th:first-child {
+    padding-left: 1em;
+  }
+  
+  tbody tr {
+    height: 95px;
+    border-bottom: 2px solid rgba(0,0,0, .1);
+    box-sizing: content-box;
+    align-items: center;
+    width: 100%;
+
+    td:first-child {
+      padding-left: 1em;
+    }
+  }
+}
+
+.product-crud__table__td--centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 95px;
+}
+
+.circular-progressbar-container {
+  display: flex;
+  height: 90px;
+  width: 100px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  .CircularProgressbar {
+    width: 65px;
   }
 }
 

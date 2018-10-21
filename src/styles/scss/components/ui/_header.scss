@@ -28,12 +28,18 @@ header {
 }
 
 .header__centered-content {
-  
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
   height: $header-height; 
   margin: 0 auto;
   max-height: $header-height;
-  max-width: $max-container-width;
+  max-width: calc(#{$max-container-width} - 4em);
+  padding: 0;
   width: 100%;
-  display: flex;
-  align-items: center;
+
+  @include sm {padding: 0 1em}
+  @include md {padding: 0 2em}
+  @include lg {padding: 0 2em}
+  @include xl {padding: 0}
 }

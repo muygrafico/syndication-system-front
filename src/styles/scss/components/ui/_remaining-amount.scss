@@ -5,11 +5,13 @@
 }
 
 .remaining-amount__title {
-  font-size: 1.15em;
+  font-size: 1.1em;
   font-family: $base-font-family;
   font-weight: lighter;
-  letter-spacing: .5px;
-  color: rgba($white-color, .9);
+  letter-spacing: .75px;
+  color: rgba($white-color, .85);
+  margin: 0;
+  padding: 0;
 }
 
 $remaining-amount-percentage-bar-height: 6px;

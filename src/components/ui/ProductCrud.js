@@ -57,8 +57,16 @@ const ProductCrud = (props) => (
                         productCRUD.purchases.map((p, i) => {
                                 return (
                                     <tr key={i}>
-                                        <td>{p.inverstorsName}</td>
-                                        <td>${p.sold.toLocaleString()}</td>
+                                        <td>
+                                            <span className='product-crud__text'>
+                                                {p.inverstorsName}
+                                            </span>
+                                        </td>
+                                        <td>
+                                            <span className='product-crud__text'>
+                                                ${p.sold.toLocaleString()}
+                                            </span>
+                                        </td>
                                         <td>
                                             <div className='circular-progressbar-container'>
                                                 <CircularProgressbar
@@ -72,7 +80,11 @@ const ProductCrud = (props) => (
                                                 />
                                             </div>
                                         </td>
-                                        <td>${p.amountLeft.toLocaleString()}</td>
+                                        <td>
+                                            <span className='product-crud__text'>
+                                                ${p.amountLeft.toLocaleString()}
+                                            </span>
+                                        </td>
                                         <td>
                                             <div className='circular-progressbar-container'>
                                                 <CircularProgressbar
@@ -87,7 +99,7 @@ const ProductCrud = (props) => (
                                             </div>
                                         </td>
                                         <td>
-                                            <button>e</button>
+                                            <button>&#9999;</button>
                                             <button>x</button>
                                         </td>
                                     </tr>

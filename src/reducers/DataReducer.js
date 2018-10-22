@@ -25,24 +25,24 @@ const initialState = {
         purchases: [
             {
               inverstorsName: 'Y Combinator',
-              sold: 830800,
-              purchasedPercentage: 10.7,
-              amountLeft: 230800,
-              remainingPercentage: 100
+              sold: 50000,
+              purchasedPercentage: 33.3,
+              amountLeft: 100000,
+              remainingPercentage: 66.6
             },
             {
               inverstorsName: 'SassStr',
-              sold: 830800,
-              purchasedPercentage: 20,
-              amountLeft: 230800,
-              remainingPercentage: 89.3
+              sold: 50000,
+              purchasedPercentage: 33.3,
+              amountLeft: 50000,
+              remainingPercentage: 33.3
             },
             {
               inverstorsName: 'IndieGo',
-              sold: 830800,
-              purchasedPercentage: 20,
-              amountLeft: 230800,
-              remainingPercentage: 89.3
+              sold: 50000,
+              purchasedPercentage: 33.3,
+              amountLeft: 0,
+              remainingPercentage: 0
             }
         ]
     }

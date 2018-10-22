@@ -20,10 +20,6 @@ const ProductCrud = (props) => {
     const productCRUD = props && props.products && props.selectedProductID
     ? filterSelected(props.selectedProductID, props.products)[0] : []
 
-    const productCRUD2 = props.data
-    console.log(productCRUD2)
-    // console.log(productCRUD)
-
     return (
         <div className='product-crud'>
             <div>
@@ -105,14 +101,15 @@ const ProductCrud = (props) => {
                 </div>
             </div>
             <div className='product-crud__footer'>
-                <RemainingAmount percentage={50} />
+                <RemainingAmount
+                  productCRUD={productCRUD}
+                />
             </div>
         </div>
     )
 }
 
 ProductCrud.propTypes = {
-  data: PropTypes.any,
   selectedProductID: PropTypes.any,
   products: PropTypes.any
 }

@@ -43,8 +43,6 @@ const ProductItem = (props) => (
     </li>
 )
 
-// export default ProductItem
-
 ProductItem.propTypes = {
   id: PropTypes.any,
   date: PropTypes.any,

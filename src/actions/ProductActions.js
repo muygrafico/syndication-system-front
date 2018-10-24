@@ -6,10 +6,3 @@ export function selectProduct (id) {
     id
   }
 }
-
-export function deleteProduct (id) {
-  return {
-    type: actionTypes.DELETE_PRODUCT,
-    id
-  }
-}

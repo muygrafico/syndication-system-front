@@ -4,7 +4,7 @@ import CircularProgressbar from 'react-circular-progressbar'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import utils from '../../utils'
-import { deleteProduct } from '../../actions/ProductActions'
+import { deletePurchase } from '../../actions/FetchActions'
 
 import 'react-circular-progressbar/dist/styles.css'
 
@@ -18,12 +18,12 @@ const mapStateToProps = (store) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    deleteProduct: (id) => dispatch(deleteProduct(id))
+    deletePurchase: (id, productID) => dispatch(deletePurchase(id, productID))
   }
 }
 
-const deleteHandler = (id, props) => {
-    props.deleteProduct(id)
+const deleteHandler = (id, props, productID) => {
+    props.deletePurchase(id, productID)
 }
 
 const ProductCrud = (props) => {
@@ -116,7 +116,7 @@ const ProductCrud = (props) => {
                                             <td>
                                                 <button>&#9999;</button>
                                                 <button
-                                                  onClick={(e) => deleteHandler(p.id, props)}
+                                                  onClick={(e) => deleteHandler(p.id, props, productCRUD.id)}
                                                   >
                                                   x
                                                 </button>

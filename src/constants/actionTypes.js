@@ -2,7 +2,9 @@ import keyMirror from 'keymirror'
 
 const actionTypes = keyMirror({
   'SELECT_PRODUCT': null,
-  'DELETE_PRODUCT': null,
+  'DELETE_PURCHASE': null,
+  'DELETE_PURCHASE_SUCESS': null,
+  'DELETE_PURCHASE_ERROR': null,
   'GET_PRODUCTS': null,
   'GET_PRODUCTS_SUCCESS': null,
   'GET_PRODUCTS_ERROR': null,

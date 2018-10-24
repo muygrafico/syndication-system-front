@@ -9,6 +9,47 @@ export function selectProduct (id) {
   }
 }
 
+export function deletePurchaseFetchSuccess (payload) {
+    return {
+        type: actionTypes.DELETE_PURCHASE_SUCESS,
+        payload
+    }
+}
+
+export function deletePurchaseHasErrors (errors) {
+    return {
+        type: actionTypes.DELETE_PURCHASE_ERROR,
+        errors
+    }
+}
+
+export function deletePurchase (purchaseID, productID) {
+    const url = API_URL + `/purchases/${purchaseID}`
+
+    return (dispatch) => {
+      fetch(url, {
+        method: 'DELETE',
+        headers: {
+          Accept: 'application/json',
+          mode: 'no-cors'
+        }
+      }).then(response => {
+         if (response.ok === true) {
+          //  response.json().then(json => {
+            dispatch(deletePurchaseFetchSuccess())
+            dispatch(getProductPurchases(productID))
+          //  })
+         }
+
+         if (response.ok === false) {
+           response.json().then(json => {
+            dispatch(deletePurchaseHasErrors(json))
+           })
+         }
+      })
+    }
+}
+
 export function productsHasErrors (errors) {
     return {
         type: actionTypes.GET_PRODUCTS_ERROR,

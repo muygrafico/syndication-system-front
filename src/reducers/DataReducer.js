@@ -1,5 +1,4 @@
 import actionTypes from '../constants/actionTypes'
-// import utils from '../utils'
 
 const initialState = {
   testKey: 0,
@@ -17,9 +16,7 @@ export default (state = initialState, action) => {
     return Object.assign({}, state, { products: action.payload.data })
 
   case actionTypes.GET_PRODUCT_PURCHASES_SUCCESS:
-    // console.log(action.payload)
     return Object.assign({}, state, { productPurchases: action.payload.data })
-    // return state
   case actionTypes.SELECT_PRODUCT:
     return Object.assign({}, state, { selectedProductID: action.id })
 

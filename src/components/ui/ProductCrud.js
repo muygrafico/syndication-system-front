@@ -33,6 +33,14 @@ const ProductCrud = (props) => {
     const productSelected =
         utils.filterSelected(props.selectedProductID, props.products)
 
+    const limitAmount = productCRUD &&
+                        productCRUD.attributes &&
+                        productCRUD.attributes.priceInDollars
+                        ? productCRUD.attributes.priceInDollars
+                        : 0
+
+    let leftAcc = 0
+
     return (
         <div className='product-crud'>
             <div>
@@ -58,9 +66,10 @@ const ProductCrud = (props) => {
                             props.productPurchases &&
                             props.productPurchases.length > 0 &&
                             props.productPurchases.map((p, i) => {
-                                p.amountLeft = 10
-                                p.purchasedPercentage = 10
-                                p.remainingPercentage = 10
+                                leftAcc += p.attributes.sold
+                                p.amountLeft = limitAmount - leftAcc
+                                p.purchasedPercentage = ((p.attributes.sold * 100) / limitAmount).toFixed(1)
+                                p.remainingPercentage = ((leftAcc * 100) / limitAmount).toFixed(1)
                                     return (
                                         <tr key={i}>
                                             <td>

@@ -26,7 +26,7 @@ const ProductItem = (props) => (
     <li
       onClick={(e) => clickHandler(e, props)}
       className={'product-item ' +
-        (props.selectedProductID === parseInt(props.id)
+        (props.selectedProductID === props.id
         ? 'product-item--active'
         : '')}
       >

@@ -73,6 +73,10 @@ $product-crud-table-padding-left: 1.75em;
       background-color: $blue-color-1;
       color: $white-color;
     }
+
+    &:focus {
+      outline: 0;
+    }
   }
 
   thead th {

@@ -9,6 +9,53 @@ export function selectProduct (id) {
   }
 }
 
+export function postPurchaseFetchSuccess (payload) {
+    return {
+        type: actionTypes.POST_PURCHASE_SUCESS,
+        payload
+    }
+}
+
+export function postPurchaseHasErrors (errors) {
+    return {
+        type: actionTypes.POST_PURCHASE_ERROR,
+        errors
+    }
+}
+
+export function postPurchase (realID, productID) {
+    const url = API_URL + `/purchases`
+    const object = {
+      'purchase': {
+            investor: 'Some Inversor',
+            sold: '50000',
+            product_id: realID
+          }
+    }
+
+    return (dispatch) => {
+      fetch(url, {
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json; charset=utf-8'
+        },
+        body: JSON.stringify(object)
+      }).then(response => {
+         if (response.ok === true) {
+            dispatch(postPurchaseFetchSuccess())
+            dispatch(getProductPurchases(productID))
+         }
+
+         if (response.ok === false) {
+           response.json().then(json => {
+            dispatch(postPurchaseHasErrors(json))
+           })
+         }
+      })
+    }
+}
+
 export function deletePurchaseFetchSuccess (payload) {
     return {
         type: actionTypes.DELETE_PURCHASE_SUCESS,
@@ -30,15 +77,12 @@ export function deletePurchase (purchaseID, productID) {
       fetch(url, {
         method: 'DELETE',
         headers: {
-          Accept: 'application/json',
-          mode: 'no-cors'
+          Accept: 'application/json'
         }
       }).then(response => {
          if (response.ok === true) {
-          //  response.json().then(json => {
             dispatch(deletePurchaseFetchSuccess())
             dispatch(getProductPurchases(productID))
-          //  })
          }
 
          if (response.ok === false) {

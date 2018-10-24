@@ -42,7 +42,7 @@ const postHandler = (selectedProduct, props) => {
         selectedProduct &&
         selectedProduct.attributes &&
         selectedProduct.attributes.internalId &&
-        selectedProduct.attributes.priceInDollars >= totalPurchases
+        selectedProduct.attributes.priceInDollars > totalPurchases
         ) {
         props.postPurchase(
             selectedProduct.attributes.internalId,
@@ -52,7 +52,7 @@ const postHandler = (selectedProduct, props) => {
 }
 
 class Application extends Component {
-    componentDidMount (a, b) {
+    componentWillMount () {
         this.props.getProducts()
     }
 

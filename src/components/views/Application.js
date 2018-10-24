@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 import ProductList from '../ui/ProductList'
 import ProductItem from '../ui/ProductItem'
 import ApplicationBox from '../ui/ApplicationBox'
@@ -7,6 +7,7 @@ import ProductListConainer from '../containers/ProductListContainer'
 import SellAllIcon from '../icons/SellAllIcon'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { getProducts } from '../../actions/FetchActions'
 
 const mapStateToProps = (store) => {
   return {
@@ -14,7 +15,17 @@ const mapStateToProps = (store) => {
   }
 }
 
-const Application = ({ products }) => {
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    getProducts: (id) => dispatch(getProducts())
+  }
+}
+class Application extends Component {
+    componentDidMount (a, b) {
+        this.props.getProducts()
+    }
+
+    render () {
     return (
         <div className='application'>
             <h2 className='application__title'>Advances for syndication</h2>
@@ -23,11 +34,11 @@ const Application = ({ products }) => {
                 <ProductListConainer>
                     <h4 className='product-list__header-title'>Select a product to syndicate</h4>
                     <ProductList>
-                        {products.map(i => {
+                        {this.props.products.map(i => {
                             return (
                                 <ProductItem
-                                  date={i.date}
-                                  amount={i.amount}
+                                  date={i.attributes.year}
+                                  amount={i.attributes.priceInDollars}
                                   id={i.id}
                                   key={i.id}
                             />
@@ -52,10 +63,12 @@ const Application = ({ products }) => {
             </ApplicationBox>
         </div>
     )
+    }
 }
 
 Application.propTypes = {
-  products: PropTypes.any
+  products: PropTypes.any,
+  getProducts: PropTypes.any
 }
 
-export default connect(mapStateToProps)(Application)
+export default connect(mapStateToProps, mapDispatchToProps)(Application)

@@ -7,6 +7,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 import rootReducer from './reducers/RootReducer'
+import thunk from 'redux-thunk'
 
 const history = createBrowserHistory()
 
@@ -15,6 +16,7 @@ const store = createStore(
   connectRouter(history)(rootReducer),
   composeEnhancer(
     applyMiddleware(
+      thunk,
       routerMiddleware(history)
     )
   )

@@ -3,22 +3,35 @@ import RemainingAmount from './RemainingAmount'
 import CircularProgressbar from 'react-circular-progressbar'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import utils from '../../utils'
+import { deleteProduct } from '../../actions/ProductActions'
 
 import 'react-circular-progressbar/dist/styles.css'
 
 const mapStateToProps = (store) => {
   return {
     selectedProductID: store.DataReducer.selectedProductID,
-    products: store.DataReducer.products
+    products: store.DataReducer.products,
+    productPurchases: store.DataReducer.productPurchases
   }
 }
 
-const filterSelected = (id, collection) =>
-    collection.filter(x => x.id === id)
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    deleteProduct: (id) => dispatch(deleteProduct(id))
+  }
+}
+
+const deleteHandler = (id, props) => {
+    props.deleteProduct(id)
+}
 
 const ProductCrud = (props) => {
     const productCRUD = props && props.products && props.selectedProductID
-    ? filterSelected(props.selectedProductID, props.products)[0] : []
+        ? utils.filterSelected(props.selectedProductID, props.products)[0] : []
+
+    const productSelected =
+        utils.filterSelected(props.selectedProductID, props.products)
 
     return (
         <div className='product-crud'>
@@ -42,19 +55,22 @@ const ProductCrud = (props) => {
                         </thead>
                         <tbody>
                             {productCRUD &&
-                            productCRUD.purchases &&
-                            productCRUD.purchases.length > 0 &&
-                            productCRUD.purchases.map((p, i) => {
+                            props.productPurchases &&
+                            props.productPurchases.length > 0 &&
+                            props.productPurchases.map((p, i) => {
+                                p.amountLeft = 10
+                                p.purchasedPercentage = 10
+                                p.remainingPercentage = 10
                                     return (
                                         <tr key={i}>
                                             <td>
                                                 <span className='product-crud__text'>
-                                                    {p.inverstorsName}
+                                                    {p.attributes.investor}
                                                 </span>
                                             </td>
                                             <td>
                                                 <span className='product-crud__text'>
-                                                    ${p.sold.toLocaleString()}
+                                                    ${p.attributes.sold.toLocaleString()}
                                                 </span>
                                             </td>
                                             <td>
@@ -90,7 +106,11 @@ const ProductCrud = (props) => {
                                             </td>
                                             <td>
                                                 <button>&#9999;</button>
-                                                <button>x</button>
+                                                <button
+                                                  onClick={(e) => deleteHandler(p.id, props)}
+                                                  >
+                                                  x
+                                                </button>
                                             </td>
                                         </tr>
                                     )
@@ -102,7 +122,9 @@ const ProductCrud = (props) => {
             </div>
             <div className='product-crud__footer'>
                 <RemainingAmount
-                  productCRUD={productCRUD}
+                  productSelected={productSelected}
+                  products={props.products}
+                  productPurchases={props.productPurchases}
                 />
             </div>
         </div>
@@ -111,7 +133,8 @@ const ProductCrud = (props) => {
 
 ProductCrud.propTypes = {
   selectedProductID: PropTypes.any,
+  productPurchases: PropTypes.any,
   products: PropTypes.any
 }
 
-export default connect(mapStateToProps)(ProductCrud)
+export default connect(mapStateToProps, mapDispatchToProps)(ProductCrud)

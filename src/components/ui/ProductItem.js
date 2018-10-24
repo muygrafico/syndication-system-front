@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
+import { getProductPurchases } from '../../actions/FetchActions'
 import { selectProduct } from '../../actions/ProductActions'
 
 const mapStateToProps = (store) => {
@@ -11,11 +12,13 @@ const mapStateToProps = (store) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
+    getProductPurchases: (id) => dispatch(getProductPurchases(id)),
     selectProduct: (id) => dispatch(selectProduct(id))
   }
 }
 
 const clickHandler = (event, props) => {
+    props.getProductPurchases(props.id)
     props.selectProduct(props.id)
 }
 
@@ -34,7 +37,7 @@ const ProductItem = (props) => (
             </span>
             <span className='product-item__top__right'>
                 <h5 className='product-item__title product-item__title--blue'>Advance</h5>
-                <span className='product-item__date'>{props.date}</span>
+                <span className='product-item__date'>{new Date(props.date).toLocaleDateString('en-US')}</span>
             </span>
         </span>
         <span className='product-item__bottom'>

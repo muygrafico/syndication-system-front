@@ -28,7 +28,7 @@ const RemainingAmount = ({ productSelected, products, productPurchases }) => {
     return (
         <div className='remaining-amount'>
             <p className='remaining-amount__title'>
-                Remainig amount ${totalLeft && totalLeft.toLocaleString()} of
+                Remaining amount ${totalLeft && totalLeft.toLocaleString()} of
                 ${limitAmount && limitAmount.toLocaleString()}
             </p>
             <div className='remaining-amount__percentage-bar-container'>

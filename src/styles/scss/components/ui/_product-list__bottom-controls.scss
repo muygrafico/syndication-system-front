@@ -29,12 +29,12 @@
     border: 2px solid $main-color;
     color: $main-color;
     cursor: pointer;
-    display: flex;
+    display: inline-block;
     font-size: .7em;
     height: 2.5em;
     justify-content: center;
     margin: .5em;
-    padding: 0 3.5em;
+    padding: 0 1em;
     
     span {
       // background-color: red;

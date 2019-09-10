@@ -9,6 +9,12 @@ export function selectProduct (id) {
   }
 }
 
+export function postPurchaseFetch () {
+    return {
+        type: actionTypes.POST_PURCHASE
+    }
+}
+
 export function postPurchaseFetchSuccess (payload) {
     return {
         type: actionTypes.POST_PURCHASE_SUCESS,
@@ -34,6 +40,8 @@ export function postPurchase (realID, productID) {
     }
 
     return (dispatch) => {
+      dispatch(postPurchaseFetch())
+
       fetch(url, {
         method: 'POST',
         headers: {
@@ -56,6 +64,12 @@ export function postPurchase (realID, productID) {
     }
 }
 
+export function deletePurchaseFetch () {
+    return {
+        type: actionTypes.DELETE_PURCHASE
+    }
+}
+
 export function deletePurchaseFetchSuccess (payload) {
     return {
         type: actionTypes.DELETE_PURCHASE_SUCESS,
@@ -74,6 +88,8 @@ export function deletePurchase (purchaseID, productID) {
     const url = API_URL + `/purchases/${purchaseID}`
 
     return (dispatch) => {
+      dispatch(deletePurchaseFetch())
+
       fetch(url, {
         method: 'DELETE',
         headers: {
@@ -94,10 +110,9 @@ export function deletePurchase (purchaseID, productID) {
     }
 }
 
-export function productsHasErrors (errors) {
+export function productsFetch () {
     return {
-        type: actionTypes.GET_PRODUCTS_ERROR,
-        errors
+        type: actionTypes.GET_PRODUCTS_STARTED
     }
 }
 
@@ -108,16 +123,16 @@ export function productsFetchSuccess (payload) {
     }
 }
 
-export function productsFetch () {
+export function productsHasErrors (errors) {
     return {
-        type: actionTypes.GET_PRODUCTS_STARTED
+        type: actionTypes.GET_PRODUCTS_ERROR,
+        errors
     }
 }
 
-export function purchasesHasErrors (errors) {
+export function purchasesFetch () {
     return {
-        type: actionTypes.GET_PRODUCT_PURCHASES_ERROR,
-        errors
+        type: actionTypes.GET_PRODUCT_PURCHASES
     }
 }
 
@@ -128,13 +143,19 @@ export function purchasesFetchSuccess (payload) {
     }
 }
 
+export function purchasesHasErrors (errors) {
+    return {
+        type: actionTypes.GET_PRODUCT_PURCHASES_ERROR,
+        errors
+    }
+}
+
 export function getProducts () {
     const url = API_URL + `/products`
 
     return (dispatch, getState) => {
       dispatch(productsFetch())
 
-      console.log('current state:', getState())
       fetch(url, {
         method: 'GET',
         headers: {
@@ -160,6 +181,7 @@ export function getProductPurchases (productID) {
     const url = API_URL + `/products/${productID}/purchases`
 
     return (dispatch, getState) => {
+      dispatch(purchasesFetch())
       fetch(url, {
         method: 'GET',
         headers: {

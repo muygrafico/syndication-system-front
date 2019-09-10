@@ -1,6 +1,7 @@
 import actionTypes from '../constants/actionTypes'
 
-const API_URL = 'http://localhost:3000'
+let API_URL = 'http://localhost:3000'
+API_URL = 'https://syndication-app-api.herokuapp.com/'
 
 export function selectProduct (id) {
   return {

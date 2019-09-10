@@ -25,9 +25,11 @@
   height: calc(100% - 90px);
   margin: 0 auto 0 auto;
   max-width: $max-container-width;
+  min-width: $min-container-width;
   position: relative;
   width: 100%;
   box-sizing: border-box;
+  z-index: 1;
 
   @include md {
     padding: 0 2em;

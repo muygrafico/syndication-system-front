@@ -17,7 +17,8 @@ const ApplicationBox = (props) => (
 )
 
 ApplicationBox.propTypes = {
-  children: PropTypes.any
+  children: PropTypes.any,
+  loading: PropTypes.any
 }
 
 const mapStateToProps = (store) => {
